@@ -1,0 +1,104 @@
+<HTML>
+<HEAD>
+	<TITLE>Cannibal navbar</TITLE>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+function launchWindow (url, name, width, height) {
+   var x = 10;
+   var y = 10;
+   var params =  "status=0,scrollbars=0,resizable=1,screenX=" + x + ",screenY=" + y + ",width=" + width + ",height=" + height + ")";
+   var windowvar = window.open(url, name, params);
+}
+function launchApplet() {
+   var name = "Cannibal_Applet";
+   var url = "CannibalApplet.html";
+   launchWindow (url, name, 650, 700);
+   }
+// -->
+</SCRIPT>
+
+<SCRIPT LANGUAGE="javascript1.1">
+// <!--
+var pics;
+pics = new Array();
+var picCount = 0;
+
+// function to set array of image name, along with two images
+function preload(name, first, second) {
+    pics[picCount] = new Array(3);
+    pics[picCount][0] = new Image();
+    pics[picCount][0].src = first;
+    pics[picCount][1] = new Image();
+    pics[picCount][1].src = second;
+    pics[picCount][2] = name;
+    picCount++;
+}
+
+//function to turn images on
+function on(name){
+    for (i = 0; i < picCount; i++) {
+      if (document.images[pics[i][2]] != null)
+        if (name != pics[i][2]) {
+          document.images[pics[i][2]].src = pics[i][0].src;
+        } else {
+          document.images[pics[i][2]].src = pics[i][1].src;
+        }
+    }
+}
+
+// function to turn images off
+function off(){
+     for (i = 0; i < picCount; i++) {
+      if (document.images[pics[i][2]] != null)
+        document.images[pics[i][2]].src = pics[i][0].src;
+    }
+}
+
+// preloads the images
+preload("bkgnd", "pics/Background.gif", "pics/BackgroundON.gif");
+preload("applet", "pics/Applet.gif", "pics/AppletON.gif");
+preload("controls", "pics/Controls.gif", "pics/ControlsON.gif");
+preload("physics", "pics/Physics.gif", "pics/PhysicsON.gif");
+preload("links", "pics/Links.gif", "pics/LinksON.gif");
+preload("lab", "pics/Lab.gif", "pics/LabON.gif");
+
+// -->
+</SCRIPT>
+
+</HEAD>
+
+<BODY STYLE="background: #000000 fixed">
+<!-- BGCOLOR="#000000" -->
+
+<TABLE ALIGN="center" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+<TR><TD>
+<CENTER><A HREF="../web/index.html" TARGET="_top">
+		<IMG SRC="../JLicon.gif" WIDTH=110 HEIGHT=87 BORDER=0 ALT="JavaLab Home"></A>
+</TD></TR>
+
+	<TR><TD><A HREF="CannibalNavExp.html" TARGET="navbar" onMouseOver="on('bkgnd')" onMouseOut="off()">
+			<IMG NAME="bkgnd" SRC="pics/Background.gif" WIDTH=120 HEIGHT=30 BORDER=0 ALT="Cannibal Background Info"></A>
+			</TD></TR>
+	<TR><TD><A HREF="javascript:launchApplet()" onMouseOver="on('applet')" onMouseOut="off()">
+			<IMG NAME="applet" SRC="pics/Applet.gif" WIDTH=120 HEIGHT=30 BORDER=0 ALT="Applet"></A>
+			</TD></TR>
+	<TR><TD><A HREF="CannibalControls.html" TARGET="CannibalMain" onMouseOver="on('controls')" onMouseOut="off()">
+			<IMG NAME="controls" SRC="pics/Controls.gif" WIDTH=120 HEIGHT=30 BORDER=0 ALT="Controls"></A>
+			</TD></TR>
+	<TR><TD><A HREF="CannibalPhysics.html" TARGET="CannibalMain" onMouseOver="on('physics')" onMouseOut="off()">
+			<IMG NAME="physics" SRC="pics/Physics.gif" WIDTH=120 HEIGHT=30 BORDER=0 ALT="Physics of the Applet"></A>
+			</TD></TR>
+	<TR><TD><A HREF="CannibalLab.html" TARGET="CannibalMain" onMouseOver="on('lab')" onMouseOut="off()">
+			<IMG NAME="lab" SRC="pics/Lab.gif" WIDTH=120 HEIGHT=30 BORDER=0 ALT="Lab Exercises"></A>
+			</TD></TR>
+	<TR><TD><A HREF="CannibalLinks.html" TARGET="CannibalMain" onMouseOver="on('links')" onMouseOut="off()">
+			<IMG NAME="links" SRC="pics/Links.gif" WIDTH=120 HEIGHT=30 BORDER=0 ALT="Other Links"></A>
+			</TD></TR>
+
+
+</TABLE>
+
+</CENTER>
+</BODY>
+</HTML>

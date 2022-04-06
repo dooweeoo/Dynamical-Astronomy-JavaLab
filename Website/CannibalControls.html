@@ -1,0 +1,155 @@
+<HTML>
+<HEAD>
+	<TITLE>Welcome to the Cannibal JavaLab</TITLE>
+
+	<STYLE TYPE="text/css">
+	<!--
+	BODY {background-color: #000000;
+		 background-attachment: fixed;}
+	I.red {color: CC0000;
+	       font-size:12pt;}
+	B.red {font-size: 12pt; font-weight: bold; color: #CC0000}
+	UL { list-style-type: disc;
+	     list-style-image: url(pics/red_bullet.gif);}
+	TD.title {  color: #CC0000;
+				font-family: "Arial";
+				font-weight: bold;
+				font-size: 12pt;
+				vertical-align: middle;}
+	TD.caption {font-size: 8pt;
+				text-align: center;
+				color: CC0000;
+				font-weight: bold;}
+	.text { font-family: "Arial","Courier","Helvetica";
+			font-size: 12pt;
+			color: #CCCCCC;
+			vertical-align: top;}
+	-->
+	</STYLE>
+
+</HEAD>
+<BODY class=gray>
+<CENTER>
+<TABLE WIDTH=100% BORDER=0 CELLSPACING=0 CELLPADDING=5>
+<TR><TD CLASS=title VALIGN=CENTER>Cannibal Applet Controls
+</TD>
+<TD ALIGN=RIGHT VALIGN=CENTER><A HREF="CannibalMain.html" TARGET="_top"><IMG SRC="pics/Cannibal.gif" HEIGHT=75 WIDTH=200 BORDER=0 ALT="Cannibal Home"></A></TD>
+</TR>
+</TABLE>
+
+<TABLE WIDTH=100% BORDER=0 CELLSPACING=0 CELLPADDING=5>
+<TR><TD class=text >
+
+<P>
+<B CLASS=red>Satellite Parameters:</B>
+<BR>
+<UL>
+<LI>
+<I class=red>Satellite Mass:</I> The mass of the satellite galaxy as a percentage of the central galaxy's disk mass.
+</LI>
+<LI>
+<I class=red>Satellite Radius:</I> The radius of the satellite galaxy in kiloparsecs.
+</LI>
+<LI>
+<I class=red>Start Button:</I> Starts the simulation.
+</LI>
+<LI>
+<I class=red>Pause Button:</I> Pauses the simulation.
+</LI>
+<LI>
+<I class=red>Stop Button:</I> Stops the simulation.
+</LI>
+</UL>
+
+
+
+<P>
+<B CLASS=red>Orbit Parameters:</B>
+<BR>
+<BR>
+<UL>
+<LI><I class=red>Apogee Radius:</I> The maximum radius (in kiloparsecs) that will be achieved by the satellite.
+								Cannibal will begin the simulation with the satellite at apogee.
+</LI>
+<LI>
+<I class=red>Perigee Radius:</I> The minimum radius (in kiloparsecs) that would be achieved by the satellite if
+								 its orbit did not decay.
+</LI>
+<LI>
+<I class=red>Inclination:</I> The angle the satellite's orbit makes with the galactic plane at
+							  the ascending node (in degrees).
+</LI>
+</UL>
+
+
+<P>
+<B CLASS=red>Sim Parameters:</B>
+<BR>
+<BR>
+<UL>
+<LI>
+<I class=red>Number of Stars:</I> The number of stars in the satellite galaxy.  Note that the simulation
+								  slows down greatly as more stars are added.
+</LI>
+<LI>
+<I class=red>Timestep:</I> The timestep to be used by Cannibal's RK4 integrator.  This timestep
+						   is only used when the number of stars is greater than zero.  For computing
+						   the propagation with zero stars, Cannibal uses an adaptive timestep, RK45
+						   integrator.
+</LI>
+<LI>
+<I class=red>Disk Effects Toggle:</I> Toggle the effects of the galactic disk.  Disabling disk effects
+									  will simulate the satellites propagation through a dark matter halo.
+</LI>
+<LI>
+<I class=red>Mass Loss Toggle:</I> Toggles the effects of mass loss in the satellite.  When disabled,
+								   the satellite's mass will not deminish as it falls into the central galaxy.
+</LI>
+</UL>
+
+<P>
+<B CLASS=red>Satellite View:</B>
+<BR>
+<BR>
+The satellite view provides a two-dimensional view of the satellite in the xy-plane.
+In the upper left corner of the window is the current tidal radius of the galaxy in
+kiloparsecs.  The tidal radius is graphically indicated by the green circle about
+the center of the satellite.
+<UL>
+<LI>
+Holding down the SHIFT key while dragging the mouse up and down will zoom the view
+in and out.
+</LI>
+</UL>
+
+
+<P>
+<B CLASS=red>Galaxy View:</B>
+<BR>
+<BR>
+The galaxy view provides a three-dimensional view of the satellite's orbit about the
+central galaxy.  At the center of the central galaxy are the Cartesian axes.
+The galactic disk is represented by the yellow circle in the xy-plane, and has a
+radius of 10,000 kpc. The center of the satellite galaxy is represented by a red ball.
+By using the <I class=red>Show Path Toggle</I> you can enable or disable a green trace
+of the satellite's orbit.  However, enabling this feature may slow the applet down.
+<UL>
+<LI>
+Dragging the mouse in this window will move the viewpoint about the center of the
+galaxy.
+</LI>
+<LI>
+Holding down the SHIFT key while dragging the mouse up and down will zoom the view
+in and out.
+</LI>
+</UL>
+
+
+
+
+</TD></TR>
+</TABLE>
+
+</CENTER>
+</BODY>
+</HTML>

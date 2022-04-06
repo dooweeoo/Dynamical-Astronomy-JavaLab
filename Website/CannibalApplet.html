@@ -1,0 +1,94 @@
+<HTML>
+
+<HEAD>
+<TITLE>Cannibal Applet</TITLE>
+
+<SCRIPT LANGUAGE="javascript1.1">
+// <!--
+var pics;
+pics = new Array();
+var picCount = 0;
+
+// function to set array of image name, along with two images
+function preload(name, first, second) {
+    pics[picCount] = new Array(3);
+    pics[picCount][0] = new Image();
+    pics[picCount][0].src = first;
+    pics[picCount][1] = new Image();
+    pics[picCount][1].src = second;
+    pics[picCount][2] = name;
+    picCount++;
+}
+
+//function to turn images on
+function on(name){
+    for (i = 0; i < picCount; i++) {
+      if (document.images[pics[i][2]] != null)
+        if (name != pics[i][2]) {
+          document.images[pics[i][2]].src = pics[i][0].src;
+        } else {
+          document.images[pics[i][2]].src = pics[i][1].src;
+        }
+    }
+}
+
+// function to turn images off
+function off(){
+     for (i = 0; i < picCount; i++) {
+      if (document.images[pics[i][2]] != null)
+        document.images[pics[i][2]].src = pics[i][0].src;
+    }
+}
+
+// preloads the images
+preload("website", "pics/Website.gif", "pics/WebsiteON.gif");
+preload("print", "pics/Print.gif", "pics/PrintON.gif");
+preload("controls", "pics/Controls.gif", "pics/ControlsON.gif");
+preload("close", "pics/Close.gif", "pics/CloseON.gif");
+// -->
+</SCRIPT>
+</HEAD>
+
+<BODY BGCOLOR="#000000" TEXT="#CC0000" >
+<CENTER>
+
+<TABLE BORDER=0 CELLPADDING=5 CELLSPACING=5>
+
+<TR ALIGN=center VALIGN=center><TD COLSPAN=4>
+
+	<APPLET WIDTH=600 HEIGHT=550 CODE="Cannibal.class" ARCHIVE="Cannibal.jar">
+	<PARAM name="rapo" value="25">
+	<PARAM name="rperi" value="10">
+	<PARAM name="incl" value="45">
+	<PARAM name="satrad" value="0.5">
+	<PARAM name="updatePeriod" value="1000">
+	</APPLET>
+	</TD></TR>
+
+<TR VALIGN="TOP">
+
+	<TD ALIGN="left"><A HREF="CannibalMain.html" TARGET="Cannibal" onMouseOver="on('website')" onMouseOut="off()">
+
+		<IMG NAME="website" SRC="pics/Website.gif" WIDTH=120 HEIGHT=30 BORDER=0 ALT="Cannibal Website"></A></TD>
+
+
+	<TD ALIGN="center"><A HREF="CannibalControls.html" TARGET="CannibalMain" onMouseOver="on('controls')" onMouseOut="off()">
+
+		<IMG NAME="controls" SRC="pics/Controls.gif" WIDTH=120 HEIGHT=30 BORDER=0 ALT="Shows Controls for Applet"></A></TD>
+
+	<TD ALIGN="right"><A HREF="javascript: self.close()" onMouseOver="on('close')" onMouseOut="off()">
+
+		<IMG NAME="close" SRC="pics/Close.gif" WIDTH=120 HEIGHT=30 BORDER=0 ALT="Closes Applet Window"></A></TD></TR>
+
+<TR ALIGN=center VALIGN=center><TD colspan=4>
+
+</TD></TR>
+
+</TABLE>
+
+</CENTER>
+
+</BODY>
+
+</HTML>
+

@@ -1,0 +1,87 @@
+<HTML>
+<HEAD>
+	<TITLE>Cannibal navbar</TITLE>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+function launchWindow (url, name, width, height) {
+   var x = 10;
+   var y = 10;
+   var params =  "status=0,scrollbars=1,resizable=1,screenX=" + x + ",screenY=" + y + ",width=" + width + ",height=" + height + ")";
+   var windowvar = window.open(url, name, params);
+}
+function launchApplet() {
+   var name = "Cannibal_Applet";
+   var url = "CannibalApplet.html";
+   launchWindow (url, name, 600, 600);
+   }
+// -->
+</SCRIPT>
+
+<SCRIPT LANGUAGE="javascript1.1">
+// <!--
+var pics;
+pics = new Array();
+var picCount = 0;
+
+// function to set array of image name, along with two images
+function preload(name, first, second) {
+    pics[picCount] = new Array(3);
+    pics[picCount][0] = new Image();
+    pics[picCount][0].src = first;
+    pics[picCount][1] = new Image();
+    pics[picCount][1].src = second;
+    pics[picCount][2] = name;
+    picCount++;
+}
+
+//function to turn images on
+function on(name){
+    for (i = 0; i < picCount; i++) {
+      if (document.images[pics[i][2]] != null)
+        if (name != pics[i][2]) {
+          document.images[pics[i][2]].src = pics[i][0].src;
+        } else {
+          document.images[pics[i][2]].src = pics[i][1].src;
+        }
+    }
+}
+
+// function to turn images off
+function off(){
+     for (i = 0; i < picCount; i++) {
+      if (document.images[pics[i][2]] != null)
+        document.images[pics[i][2]].src = pics[i][0].src;
+    }
+}
+
+// preloads the images
+preload("expand", "pics/Expanding.gif", "pics/ExpandingON.gif");
+preload("hubble", "pics/HubbleConst.gif", "pics/HubbleConstON.gif");
+preload("density", "pics/MassDensity.gif", "pics/MassDensityON.gif");
+preload("accel", "pics/Acceleration.gif", "pics/AccelerationON.gif");
+preload("age", "pics/AgeOfUniverse.gif", "pics/AgeOfUniverseON.gif");
+preload("left", "pics/left.gif", "pics/leftON.gif");
+preload("right", "pics/right.gif", "pics/rightON.gif");
+
+// -->
+</SCRIPT>
+
+</HEAD>
+
+<BODY STYLE="background: #111111 fixed">
+<!-- BGCOLOR="#111111" BACKGROUND="steel3.jpg" -->
+<CENTER>
+<TABLE WIDTH=750 BORDER=0 CELLSPACING=0 CELLPADDING=0>
+<TR>
+	<TD><A HREF="Expanding.html" TARGET="bgmain" onMouseOver="on('expand')" onMouseOut="off()"><IMG NAME="expand" SRC="pics/Expanding.gif" WIDTH=140 HEIGHT=40 BORDER=0 ALT="Expanding Universe"></A></TD>
+	<TD><A HREF="Hubble.html" TARGET="bgmain" onMouseOver="on('hubble')" onMouseOut="off()"><IMG NAME="hubble" SRC="pics/HubbleConst.gif" WIDTH=140 HEIGHT=40 BORDER=0 ALT="Hubble Constant"></A></TD>
+	<TD><A HREF="MassDensity.html" TARGET="bgmain" onMouseOver="on('density')" onMouseOut="off()"><IMG NAME="density" SRC="pics/MassDensity.gif" WIDTH=140 HEIGHT=40 BORDER=0 ALT="Mass Density"></A></TD>
+	<TD><A HREF="Acceleration.html" TARGET="bgmain" onMouseOver="on('accel')" onMouseOut="off()"><IMG NAME="accel" SRC="pics/Acceleration.gif" WIDTH=140 HEIGHT=40 BORDER=0 ALT="Acceleration"></A></TD>
+	<TD><A HREF="AgeOfUniverse.html" TARGET="bgmain" onMouseOver="on('age')" onMouseOut="off()"><IMG NAME="age" SRC="pics/AgeOfUniverse.gif" WIDTH=140 HEIGHT=40 BORDER=0 ALT="Age of Universe"></A></TD>
+</TR>
+</TABLE>
+
+</CENTER>
+</BODY>
+</HTML>
